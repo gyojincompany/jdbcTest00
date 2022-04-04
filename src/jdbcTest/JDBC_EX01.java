@@ -12,7 +12,9 @@ public class JDBC_EX01 {
 		String username = "root";
 		String password = "12345";
 		String query = "select * from smembers";
-		String query2 = "delete from smembers where id='tiger'";
+//		String query2 = "delete from smembers where id='tiger'";
+		String query2 = "insert into smembers (num, name, id, pw, email) values (3,'이순신','white','11111','white@daum.net')";
+		
 		
 		ResultSet ret = null;
 		Connection conn = null;//DB 연결 객체 선언
@@ -36,9 +38,11 @@ public class JDBC_EX01 {
 			int rnum = stmt.executeUpdate(query2);//성공여부 반환 int 1이면 성공
 			
 			if (rnum == 1) {
-				System.out.println("회원탈퇴성공!!!");
+//				System.out.println("회원탈퇴성공!!!");
+				System.out.println("회원가입성공!!!");
 			} else {
-				System.out.println("회원삭제실패!!!");
+//				System.out.println("회원삭제실패!!!");
+				System.out.println("회원가입실패!!!");
 			}
 			
 		} catch(ClassNotFoundException e) {
